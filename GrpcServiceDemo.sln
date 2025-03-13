@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcServiceDemo", "GrpcServiceDemo\GrpcServiceDemo.csproj", "{082CFDFC-6DF4-4F34-809E-6F2142F0A4F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcServiceShared", "GrpcServiceShared\GrpcServiceShared.csproj", "{0A5070B4-68F2-4A36-8A9C-E0413192CBE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcServiceClientCallDemo", "GrpcServiceClientCallDemo\GrpcServiceClientCallDemo.csproj", "{4A5026D7-38E7-49CF-9F0B-95561288A5B2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{082CFDFC-6DF4-4F34-809E-6F2142F0A4F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{082CFDFC-6DF4-4F34-809E-6F2142F0A4F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{082CFDFC-6DF4-4F34-809E-6F2142F0A4F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{082CFDFC-6DF4-4F34-809E-6F2142F0A4F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A5070B4-68F2-4A36-8A9C-E0413192CBE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A5070B4-68F2-4A36-8A9C-E0413192CBE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A5070B4-68F2-4A36-8A9C-E0413192CBE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A5070B4-68F2-4A36-8A9C-E0413192CBE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A5026D7-38E7-49CF-9F0B-95561288A5B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A5026D7-38E7-49CF-9F0B-95561288A5B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A5026D7-38E7-49CF-9F0B-95561288A5B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A5026D7-38E7-49CF-9F0B-95561288A5B2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

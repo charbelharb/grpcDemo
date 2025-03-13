@@ -1,0 +1,79 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "GrpcServiceShared";
+
+package greet;
+
+service BuildTemplateDemoYo {
+    rpc BTOne (SendMeSomethingToProcessYo) returns (TakeSomethingBackYo);
+    rpc BTTwo (SendMeAnotherThingToProcessYo) returns (TakeSomethingElseBackYo);
+}
+
+// numbers are the order of the fields in the message - obviously must be unique
+// help with serialize/deserialize binary data
+// Try to keep it less than 15
+message SendMeSomethingToProcessYo {
+    int32 id = 1;
+    string name = 2;
+    string snake_case_lol = 3;
+    SomethingInsideTheMessage i_can_have_nested_messages = 4;
+}
+
+message SomethingInsideTheMessage {
+    string name = 1;
+    google.protobuf.Timestamp what_how_when = 2;
+}
+
+message SendMeAnotherThingToProcessYo {
+    int32 id = 1;
+    string name = 2;
+    optional int32 think_of_me_as_nullable = 3;
+}
+
+message TakeSomethingBackYo {
+    bool success = 1;
+}
+
+message TakeSomethingElseBackYo {
+    bool success = 1;
+}
+
+// some out of the box types
+message DataType{
+    // Known to almost everyone
+    int32 duh = 1; // normal int
+    int64 duh2 = 2; // normal long
+    float duh3 = 3; // normal float
+    double duh4 = 4; // normal double
+    bool duh5 = 5; // normal bool
+    string duh6 = 6; // normal string
+    enum iAmAnEnum {
+        RPM = 0; // <== This should always be 0 yo
+        TNX = 1;
+        TURVO = 3;// etc..
+    }
+    iAmAnEnum enumDuh = 66; // enum
+    bytes duh7 = 7; // binary, can send files or whatever you like
+    
+    // Array/list and dictionary
+    repeated int32 listOfDuh = 8; // old school array
+    map<int32, string> dictionaryOfDuh = 9; // dictionary
+    
+    // More advanced cool stuff - go to https://protobuf.dev/programming-guides/encoding/#types for detailed explanation
+    uint32 unsignedInt = 10; // old school unsigned int -> no negative numbers
+    uint64 unsignedLong = 11; // old school unsigned long -> no negative numbers
+    sint32 signedInt = 12; // old school signed int -> Can be used for negative number optimization, better encoding ZigZag
+    sint64 signedLong = 13; // same but 64
+    fixed32 fixedInt = 14; // Use only when the number are 100% large, this will allocate fixed 4 bytes
+    fixed64 fixedLong = 15; // same but 64
+    sfixed32 signedFixedInt = 16; // same but signed
+    sfixed64 signedFixedLong = 17; // same but signed
+    
+    oneof whatTheHellIsOneOf { // I can't see any use case for this in RPM, but it's here. this means only one of the fields can be set
+        int32 me = 18;
+        int32 noMe = 19;
+        int32 shutUpItIsMe = 20;
+    }
+}
+
